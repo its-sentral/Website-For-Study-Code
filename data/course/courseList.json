@@ -1,0 +1,34 @@
+[
+    {
+        "CourseName" : "Python",
+        "CourseDisplay" : {
+            "Logo" : "https://tse4.mm.bing.net/th/id/OIP.HrBOk_qD-pQSmgSI3XzRJAHaHw?rs=1&pid=ImgDetMain&o=7&rm=3",
+            "backgroundColor" : "#3A64FF",
+            "textColor" : "#ffffff"
+        },
+        "CourseDescription" : "Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming styles and has a vast library ecosystem, making it useful for web development, data science, AI, automation, and more. Its ease of learning and versatility have made Python one of the most popular languages worldwide.",
+        "CourseId" : 109
+    },
+
+    {
+        "CourseName" : "Rust",
+        "CourseDisplay" : {
+            "Logo" : "https://www.pngitem.com/pimgs/m/19-198600_rust-logo-png-transparent-rust-lang-logo-png.png",
+            "backgroundColor" : "#eca62b",
+            "textColor" : "#000000"
+            },
+        "CourseDescription" : "Rust is a modern systems programming language focused on performance, memory safety, and concurrency. It eliminates common bugs like null pointer dereferencing and data races without using a garbage collector. Rust is widely used for systems programming, web assembly, and performance-critical applications." ,
+        "CourseId" : 108
+    },
+
+    {
+        "CourseName" : "C++",
+        "CourseDisplay" : {
+            "Logo" : "https://th.bing.com/th/id/OIP.O1mEbAKpNY-2iFVsghJZngHaHa?o=7rm=3&rs=1&pid=ImgDetMain&o=7&rm=3",
+            "backgroundColor" : "#4fb2f5",
+            "textColor" : "#ffffff"
+        },
+        "CourseDescription" : "C++ is a powerful, general-purpose programming language that combines high performance with object-oriented and low-level features. It’s commonly used in game development, operating systems, embedded systems, and applications requiring fast execution. C++ provides flexibility but requires careful memory management.",
+        "CourseId" : 54
+    }
+]

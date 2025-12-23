@@ -1,0 +1,276 @@
+{
+  "1": {
+    "Main Line": {
+      "label": "Get Started",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "1.1 What is Rust", "href": "#1-1" },
+        { "text": "1.2 Install Rust", "href": "#1-2" }
+      ]
+    },
+    "Content": {
+      "contentTitle": "Get Started",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "1",
+            "textLabel": "Welcome! Rust is a systems programming language focused on speed, memory safety, and concurrency. It is used to build operating systems, game engines, command-line tools, and high-performance backend services."
+          }
+        },
+        {
+          "type": "image",
+          "value": {
+            "id": "1-img",
+            "src": "https://upload.wikimedia.org/wikipedia/commons/d/d5/Rust_programming_language_black_logo.svg",
+            "textLabel": "Rust Logo",
+            "style": {
+              "margin": "0 auto",
+              "width": "200px",
+              "display": "block"
+            }
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1",
+            "textLabel": "Rust is a statically-typed language that compiles to machine code. It enforces memory safety (preventing segfaults and data races) without a garbage collector, using a unique 'ownership' and 'borrowing' system."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1b",
+            "textLabel": "Rust is widely used because:\n• C-like performance\n• Guaranteed memory safety\n• Fearless concurrency\n• Modern tooling (Cargo package manager)\n• Helpful compiler error messages"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-1c",
+            "language": "rust",
+            "code": "fn main() {\n    println!(\"Welcome to Rust!\");\n}"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-2",
+            "textLabel": "To install Rust, the official method is using `rustup`, the Rust toolchain installer. After installation, verify it using the command:"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-2b",
+            "language": "bash",
+            "code": "rustc --version"
+          }
+        }
+      ]
+    }
+  },
+  "2": {
+    "Main Line": {
+      "label": "Syntax",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "2.1 Rust Syntax", "href": "#2-1" },
+        { "text": "2.2 Rust I/O", "href": "#2-2" }
+      ],
+      "examId" : [1]
+    },
+    "Content": {
+      "contentTitle": "Rust Syntax Overview",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "2",
+            "textLabel": "Rust syntax defines rules on how Rust code must be written. Rust is expression-based, case-sensitive, and uses macros (like println!) for common tasks."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-1",
+            "code": "fn main() {\n    println!(\"Hello Rust!\");\n}",
+            "output": "Hello Rust!"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-1b",
+            "textLabel": "Key Rust syntax elements:\n• Functions are defined with `fn`\n• `main` is the entry point\n• `println!` is a macro (note the !)\n• Statements end with semicolons\n• Blocks use curly braces"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-2",
+            "textLabel": "Rust I/O (Input / Output) uses the `std::io` module. Reading user input is explicit and must handle potential errors."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-2b",
+            "code": "use std::io;\n\nfn main() {\n    let mut name = String::new();\n    println!(\"Enter your name: \");\n    io::stdin().read_line(&mut name)\n        .expect(\"Failed to read line\");\n    println!(\"Hello {}\", name.trim());\n}",
+            "output": "Enter your name: John\nHello John"
+          }
+        }
+      ]
+    }
+  },
+  "3": {
+    "Main Line": {
+      "label": "Data Types",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "3.1 Rust Data Types", "href": "#3-1" },
+        { "text": "3.2 Type Casting", "href": "#3-2" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Rust Data Types",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "3",
+            "textLabel": "Rust is a statically typed language. It has two major data type categories: scalar and compound."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-1",
+            "textLabel": "Scalar types:\nIntegers (i32, u64, etc.), Floats (f32, f64), Booleans (bool), Characters (char)"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "3-1b",
+            "code": "let age: i32 = 21;\nlet price: f64 = 19.99;\nlet is_rust_fun: bool = true;\nlet grade: char = 'A';"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-2",
+            "textLabel": "Type casting converts a value from one type to another. Rust does not perform automatic 'widening' casting; all casting is done explicitly with the `as` keyword."
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "3-2b",
+            "code": "let num: i32 = 10;\nlet converted: f64 = num as f64; // explicit cast\n\nlet x: f64 = 5.7;\nlet y: i32 = x as i32; // explicit cast (truncates)"
+          }
+        }
+      ]
+    }
+  },
+  "4": {
+    "Main Line": {
+      "label": "Operator",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "4.1 Rust Operator", "href": "#4-1" },
+        { "text": "4.2 Arithmetic", "href": "#4-2" },
+        { "text": "4.3 Comparison", "href": "#4-3" },
+        { "text": "4.4 Logical", "href": "#4-4" }
+      ]
+    },
+    "Content": {
+      "contentTitle": "Rust Operators",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "4-1",
+            "textLabel": "Operators allow you to perform actions on variables. They include arithmetic, logical, comparison, and bitwise operators."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-2",
+            "code": "fn main() {\n    let a = 10; let b = 5;\n    println!(\"{}\", a + b);\n    println!(\"{}\", a - b);\n    println!(\"{}\", a * b);\n    println!(\"{}\", a / b);\n}",
+            "output": "15\n5\n50\n2"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-3",
+            "code": "fn main() {\n    let x = 10; let y = 20;\n    println!(\"{}\", x > y);\n    println!(\"{}\", x == 10);\n}",
+            "output": "false\ntrue"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-4",
+            "code": "fn main() {\n    let a = true;\n    let b = false;\n    println!(\"{}\", a && b);\n    println!(\"{}\", a || b);\n}",
+            "output": "false\ntrue"
+          }
+        }
+      ]
+    }
+  },
+  "5": {
+    "Main Line": {
+      "label": "Rust If - Else",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "5.1 If Statement", "href": "#5-1" },
+        { "text": "5.2 Else Statement", "href": "#5-2" },
+        { "text": "5.3 Else If Statement", "href": "#5-3" },
+        { "text": "5.4 Nested If", "href": "#5-4" }
+      ],
+      "examId" : [1, 2]
+    },
+    "Content": {
+      "contentTitle": "Rust If/Else",
+      "contentBody": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-1",
+            "code": "fn main() {\n    let age = 18;\n    if age >= 18 {\n        println!(\"You are an adult.\");\n    }\n}",
+            "output": "You are an adult."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-2",
+            "code": "fn main() {\n    let score = 40;\n    if score >= 50 {\n        println!(\"Pass\");\n    } else {\n        println!(\"Fail\");\n    }\n}",
+            "output": "Fail"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-3",
+            "code": "fn main() {\n    let temp = 30;\n    if temp > 35 {\n        println!(\"Hot\");\n    } else if temp > 20 {\n        println!(\"Warm\");\n    } else {\n        println!(\"Cold\");\n    }\n}",
+            "output": "Warm"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-4",
+            "code": "fn main() {\n    let a = 10; let b = 5;\n    if a > 0 {\n        if b > 0 {\n            println!(\"Both positive\");\n        }\n    }\n}",
+            "output": "Both positive"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Play Ground</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/cssFiles/playGround.css">
+    </head>
+
+    
+
+
+    <body>
+        
+        <button id="navToggleButton" class="buttonStyle" onclick="navEnable()"> > </button>
+        <div class="containerStyle textContainerStyle">
+            <div id ="navBar" class="leftStyle">
+                <h1>Courses</h1>
+                <div id="courseLink" style="text-align: center;"></div>
+
+                <div style="height: 150px"></div>
+                <button class="linkButtonStyle" style="top: 92%" onclick="goHome()">Home</button>
+            </div>
+
+
+            <div id="mainArea" class="rightStyle">
+                <div class="stacking">
+                    <div class="myUniqueDiv" style="margin-bottom: 0%; height: 70%;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <h3>Code</h3>
+                            <select class="langSelector" id="langId"></select>
+                        </div>
+                        
+                        <textarea id="codeArea"></textarea>
+                        <br>
+                        <button onclick="run()" class="runBtn">&#9654; Run</button>
+                    </div>
+                    
+                    <div class="myUniqueDiv" style=" height: 30%;">
+                        <h3>Result</h3>
+                        <textarea id="result" disabled></textarea>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <script src="/scriptFiles/playGround.js" defer></script>
+        <link rel=stylesheet href="/lib/codemirror-5.65.20/doc/docs.css">
+        <link rel="stylesheet" href="/lib/codemirror-5.65.20/lib/codemirror.css">
+        <script src="/lib/codemirror-5.65.20/lib/codemirror.js"></script>
+        <script src="/lib/codemirror-5.65.20/addon/mode/simple.js"></script>
+
+        <script src="/lib/codemirror-5.65.20/mode/clike/clike.js"></script>
+        <script src="/lib/codemirror-5.65.20/mode/python/python.js"></script>
+        <script src="/lib/codemirror-5.65.20/mode/rust/rust.js"></script>
+        
+
+
+        <link rel="stylesheet" href="/lib/codemirror-5.65.20/theme/dracula.css">
+        <script src="/lib/codemirror-5.65.20/addon/edit/closebrackets.js"></script>
+        <script src="/lib/codemirror-5.65.20/addon/hint/show-hint.js"></script>
+        <link rel="stylesheet" href="/lib/codemirror-5.65.20/addon/hint/show-hint.css">
+        <script src="/lib/codemirror-5.65.20/addon/hint/anyword-hint.js"></script>
+
+        <script>
+            
+        </script>
+    </body>
+</html> 

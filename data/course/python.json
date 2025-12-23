@@ -1,0 +1,617 @@
+{
+  "1": {
+    "Main Line": {
+      "label": "Introduction",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "1.1 What is Python?", "href": "#1-1" },
+        { "text": "1.2 Why Python?", "href": "#1-1b" },
+        { "text": "1.3 Hello World", "href": "#1-1c" },
+        { "text": "1.4 Installation", "href": "#1-2" }
+      ]
+    },
+    "Content": {
+      "contentTitle": "Python Introduction",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1",
+            "textLabel": "Python is an interpreted, high-level, general-purpose programming language. It emphasizes code readability with its notable use of significant indentation. It is dynamically typed and garbage-collected."
+          }
+        },
+        {
+          "type": "image",
+          "value": {
+            "id": "1-img",
+            "src": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg",
+            "textLabel": "Python Logo"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1b",
+            "textLabel": "Python is widely used because:\n• Easy to read, write, and learn\n• Huge standard library and package ecosystem (e.g., NumPy, Pandas, Django)\n• Versatile: used in web dev, data science, AI, automation\n• Runs on all major operating systems\n• Strong and active community support"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-1c",
+            "language": "python",
+            "code": "# This is a one-line comment\nprint(\"Welcome to Python!\")"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-2",
+            "textLabel": "To use Python, download the latest version from python.org or install it using a package manager. Many systems (like macOS and Linux) come with Python pre-installed. After installation, verify it using the command:"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-2b",
+            "language": "bash",
+            "code": "python3 --version"
+          }
+        }
+      ]
+    }
+  },
+  "2": {
+    "Main Line": {
+      "label": "Syntax",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "2.1 Python Syntax", "href": "#2-1" },
+        { "text": "2.2 Python I/O", "href": "#2-2" }
+      ],
+      "examId" : [1]
+    },
+    "Content": {
+      "contentTitle": "Python Syntax Overview",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "2",
+            "textLabel": "Python syntax defines rules on how Python code must be written. Python is case-sensitive and famously uses indentation (whitespace) to define code blocks, instead of curly braces."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-1a",
+            "textLabel": "A simple 'Hello Python' program. Note the use of `print()`."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-1",
+            "code": "print(\"Hello Python!\")",
+            "output": "Hello Python!"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-1b",
+            "textLabel": "Key Python syntax elements:\n• Indentation defines code blocks\n• `print()` outputs text\n• `#` starts a comment\n• No semicolons are required at the end of statements"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-2",
+            "textLabel": "Python I/O (Input / Output) allows you to interact with users. The `input()` function is used to get user input."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-2b",
+            "code": "name = input(\"Enter your name: \")\nprint(\"Hello \" + name)",
+            "output": "Enter your name: John\nHello John"
+          }
+        }
+      ]
+    }
+  },
+  "3": {
+    "Main Line": {
+      "label": "Data Types",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "3.1 Python Data Types", "href": "#3-1" },
+        { "text": "3.2 Python Type Casting", "href": "#3-2" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Python Data Types",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "3",
+            "textLabel": "Python has several built-in data types. You don't need to declare the type; Python infers it automatically (dynamic typing)."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-1",
+            "textLabel": "Common types:\n`str` (string), `int` (integer), `float` (float), `bool` (boolean)"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "3-1b",
+            "code": "age = 21\nprice = 19.99\nis_python_fun = True\ngrade = 'A'"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-2",
+            "textLabel": "Type casting (or conversion) is done using constructor functions like `int()`, `float()`, or `str()`."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "3-2b",
+            "code": "num_str = \"10\"\nconverted = int(num_str)\n\nx = 5.7\ny = int(x) # narrowing (truncates)\nprint(y)",
+            "output": "5"
+          }
+        }
+      ]
+    }
+  },
+  "4": {
+    "Main Line": {
+      "label": "Operator",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "4.1 Python Operator", "href": "#4-1" },
+        { "text": "4.2 Arithmetic", "href": "#4-2" },
+        { "text": "4.3 Comparison", "href": "#4-3" },
+        { "text": "4.4 Logical", "href": "#4-4" }
+      ],
+      "examId" : [1, 2]
+    },
+    "Content": {
+      "contentTitle": "Python Operators",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "4",
+            "textLabel": "Operators allow you to perform actions on variables. They include arithmetic, logical, comparison, and more."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "4-2a",
+            "textLabel": "Arithmetic operators are used for common mathematical operations."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-2",
+            "code": "a = 10\nb = 5\nprint(a + b)\nprint(a - b)\nprint(a * b)\nprint(a / b) # Division always results in a float",
+            "output": "15\n5\n50\n2.0"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "4-3a",
+            "textLabel": "Comparison operators are used to compare two values."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-3",
+            "code": "x = 10\ny = 20\nprint(x > y)\nprint(x == 10)",
+            "output": "False\nTrue"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "4-4a",
+            "textLabel": "Logical operators (`and`, `or`, `not`) are used to combine conditional statements."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-4",
+            "code": "a = True\nb = False\nprint(a and b)\nprint(a or b)",
+            "output": "False\nTrue"
+          }
+        }
+      ]
+    }
+  },
+  "5": {
+    "Main Line": {
+      "label": "Python If - Else",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "5.1 If Statement", "href": "#5-1" },
+        { "text": "5.2 Else Statement", "href": "#5-2" },
+        { "text": "5.3 Elif Statement", "href": "#5-3" },
+        { "text": "5.4 Nested If", "href": "#5-4" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Python If/Else",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "5-1a",
+            "textLabel": "The `if` statement executes a block of code if a condition is true."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-1",
+            "code": "age = 18\nif age >= 18:\n    print(\"You are an adult.\")",
+            "output": "You are an adult."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "5-2a",
+            "textLabel": "The `else` statement executes if the `if` condition is false."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-2",
+            "code": "score = 40\nif score >= 50:\n    print(\"Pass\")\nelse:\n    print(\"Fail\")",
+            "output": "Fail"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "5-3a",
+            "textLabel": "The `elif` (else if) statement checks a new condition if the previous one was false."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-3",
+            "code": "temp = 30\nif temp > 35:\n    print(\"Hot\")\nelif temp > 20:\n    print(\"Warm\")\nelse:\n    print(\"Cold\")",
+            "output": "Warm"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "5-4a",
+            "textLabel": "You can nest `if` statements inside other `if` statements."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-4",
+            "code": "a = 10\nb = 5\nif a > 0:\n    if b > 0:\n        print(\"Both positive\")",
+            "output": "Both positive"
+          }
+        }
+      ]
+    }
+  },
+  "6": {
+    "Main Line": {
+      "label": "Loops",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "6.1 While Loop", "href": "#6-1" },
+        { "text": "6.2 For Loop", "href": "#6-2" },
+        { "text": "6.3 For Each Loop", "href": "#6-3" },
+        { "text": "6.4 Nested Loop", "href": "#6-4" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Loops",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "6-1a",
+            "textLabel": "A `while` loop executes as long as a condition remains true."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-1",
+            "code": "i = 1\nwhile i <= 5:\n    print(i)\n    i += 1",
+            "output": "1\n2\n3\n4\n5"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "6-2a",
+            "textLabel": "A `for` loop is often used with the `range()` function to iterate a specific number of times."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-2",
+            "code": "for i in range(1, 6): # range(start, stop-before)\n    print(i)",
+            "output": "1\n2\n3\n4\n5"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "6-3a",
+            "textLabel": "Python's `for` loop is also a 'for-each' loop, iterating over items in a sequence (like a list)."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-3",
+            "code": "nums = [10, 20, 30]\nfor n in nums:\n    print(n)",
+            "output": "10\n20\n30"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "6-4a",
+            "textLabel": "You can nest loops inside other loops."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-4",
+            "code": "for i in range(1, 4): # 1, 2, 3\n    for j in range(1, 4): # 1, 2, 3\n        print(f\"{i} {j}\")",
+            "output": "1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n3 1\n3 2\n3 3"
+          }
+        }
+      ]
+    }
+  },
+  "7": {
+    "Main Line": {
+      "label": "Python Lists",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "7.1 Lists", "href": "#7-1" },
+        { "text": "7.2 Loop Through List", "href": "#7-2" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Python Lists",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "7-1a",
+            "textLabel": "Lists are Python's version of arrays. They are ordered, mutable (changeable), and can store items of different types."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "7-1",
+            "code": "numbers = [1, 2, 3, 4]\nprint(numbers[0]) # Access by index",
+            "output": "1"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "7-2a",
+            "textLabel": "You can easily loop through all items in a list using a `for` loop."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "7-2",
+            "code": "numbers = [1, 2, 3, 4]\nfor n in numbers:\n    print(n)",
+            "output": "1\n2\n3\n4"
+          }
+        }
+      ]
+    }
+  },
+  "8": {
+    "Main Line": {
+      "label": "Dictionaries",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "8.1 Dictionaries", "href": "#8-1" },
+        { "text": "8.2 Accessing Items", "href": "#8-2" },
+        { "text": "8.3 Loop Dictionaries", "href": "#8-3" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Python Dictionaries",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "8-1a",
+            "textLabel": "Dictionaries store data in key:value pairs. They are ordered (as of Python 3.7), mutable, and do not allow duplicate keys."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "8-1",
+            "code": "person = {\n  \"name\": \"Alice\",\n  \"age\": 30,\n  \"city\": \"New York\"\n}\nprint(person)",
+            "output": "{'name': 'Alice', 'age': 30, 'city': 'New York'}"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "8-2a",
+            "textLabel": "You can access items by referring to their key name inside square brackets."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "8-2",
+            "code": "person = {\n  \"name\": \"Alice\",\n  \"age\": 30\n}\nprint(person[\"name\"])",
+            "output": "Alice"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "8-3a",
+            "textLabel": "You can loop through a dictionary's keys, values, or items (key-value pairs) using the `.items()` method."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "8-3",
+            "code": "person = {\n  \"name\": \"Alice\",\n  \"age\": 30\n}\nfor key, value in person.items():\n    print(f\"{key}: {value}\")",
+            "output": "name: Alice\nage: 30"
+          }
+        }
+      ]
+    }
+  },
+  "9": {
+    "Main Line": {
+      "label": "Functions",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "9.1 Define Function", "href": "#9-1" },
+        { "text": "9.2 Parameters", "href": "#9-2" },
+        { "text": "9.3 Return Values", "href": "#9-3" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "Python Functions",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "9-1a",
+            "textLabel": "A function is a block of code which only runs when it is called. You define a function using the `def` keyword. Function can be very useful and are often use to handle certain task"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "9-1",
+            "code": "def say_hello():\n    print(\"Hello from a function!\")\n\nsay_hello()",
+            "output": "Hello from a function!"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "9-2a",
+            "textLabel": "Information can be passed into functions as arguments (or parameters)."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "9-2",
+            "code": "def greet(name):\n    print(f\"Hello, {name}!\")\n\ngreet(\"Alice\")\ngreet(\"Bob\")",
+            "output": "Hello, Alice!\nHello, Bob!"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "9-3a",
+            "textLabel": "To let a function return a value, use the `return` statement."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "9-3",
+            "code": "def add_numbers(a, b):\n    return a + b\n\nsum = add_numbers(5, 10)\nprint(sum)",
+            "output": "15"
+          }
+        }
+      ]
+    }
+  },
+  "10": {
+    "Main Line": {
+      "label": "Tuples & Sets",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "10.1 Tuples", "href": "#10-1" },
+        { "text": "10.2 Sets", "href": "#10-2" }
+      ],
+      "examId" : [1, 2]
+    },
+    "Content": {
+      "contentTitle": "Tuples & Sets",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "10-1a",
+            "textLabel": "A Tuple is a collection which is ordered and **immutable** (unchangeable). They are written with round brackets."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "10-1",
+            "code": "fruits = (\"apple\", \"banana\", \"cherry\")\nprint(fruits[0])\n\n# This would cause an error:\n# fruits[0] = \"orange\"",
+            "output": "apple"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "textLabel": "A Set is a collection which is **unordered**, **unindexed**, and mutable. Sets do not allow duplicate values. They are written with curly brackets."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "10-2",
+            "code": "numbers = {1, 2, 3, 2, 4, 5, 1}\nprint(numbers)",
+            "output": "{1, 2, 3, 4, 5}"
+          }
+        }
+      ]
+    }
+  }
+}

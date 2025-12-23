@@ -1,0 +1,341 @@
+{
+  "1": {
+    "Main Line": {
+      "label": "Introduction",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "1.1 What is C++?", "href": "#1-1" },
+        { "text": "1.2 Why C++?", "href": "#1-1b" },
+        { "text": "1.3 Hello World", "href": "#1-1c" },
+        { "text": "1.4 Installation", "href": "#1-2" }
+      ]
+    },
+    "Content": {
+      "contentTitle": "C++ Introduction",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1",
+            "textLabel": "C++ is an object-oriented, high-level, high-performance language. It compiles directly to machine code, giving developers fine-grained control over hardware and memory. It is a 'write once, compile anywhere' language."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-1b",
+            "textLabel": "C++ is widely used because:\n• Unmatched performance and speed\n• Direct memory and hardware control\n• Runs everything from OS to game engines\n• Huge libraries (e.g., STL, Boost)\n• Backed by decades of community support"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-1c",
+            "language": "cpp",
+            "code": "#include <iostream>\n\nint main() {\n    std::cout << \"Welcome to C++!\" << std::endl;\n    return 0;\n}"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "1-2",
+            "textLabel": "To use C++, you need a C++ compiler. Common choices are G++ (part of GCC) or Clang. On Windows, you can install Visual Studio or MinGW (G++). After installation, verify it using the command:"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "1-2b",
+            "language": "bash",
+            "code": "g++ --version"
+          }
+        }
+      ]
+    }
+  },
+  "2": {
+    "Main Line": {
+      "label": "Syntax",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "2.1 C++ Syntax", "href": "#2-1" },
+        { "text": "2.2 C++ I/O", "href": "#2-2" }
+      ],
+      "examId" : [1]
+    },
+    "Content": {
+      "contentTitle": "C++ Syntax Overview",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "2",
+            "textLabel": "C++ syntax defines rules on how C++ code must be written. C++ is case-sensitive, uses semicolons to end statements, and is built around functions and (optionally) classes."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-1",
+            "code": "#include <iostream>\n\nint main() {\n    std::cout << \"Hello C++!\" << std::endl;\n    return 0;\n}",
+            "output": "Hello C++!"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-1b",
+            "textLabel": "Key C++ syntax elements:\n• Functions (like main) hold code\n• Functions perform actions\n• Statements end with semicolons\n• Blocks use curly braces"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "2-2",
+            "textLabel": "C++ I/O (Input / Output) allows you to interact with users. The iostream library (using std::cin and std::cout) is commonly used."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "2-2b",
+            "code": "#include <iostream>\n#include <string>\n\nint main() {\n    std::string name;\n    std::cout << \"Enter your name: \";\n    std::getline(std::cin, name);\n    std::cout << \"Hello \" << name << std::endl;\n    return 0;\n}",
+            "output": "Enter your name: John\nHello John"
+          }
+        }
+      ]
+    }
+  },
+  "3": {
+    "Main Line": {
+      "label": "Data Types",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "3.1 C++ Data Types", "href": "#3-1" },
+        { "text": "3.2 C++ Type Casting", "href": "#3-2" }
+      ],
+      "examId" : [1]
+    },
+    "Content": {
+      "contentTitle": "C++ Data Types",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "3",
+            "textLabel": "C++ has a rich set of built-in data types, often called *fundamental types*."
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-1",
+            "textLabel": "Fundamental types:\n`short`, `int`, `long`, `long long`, `float`, `double`, `bool`, `char`"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "3-1b",
+            "code": "int age = 21;\ndouble price = 19.99;\nbool isCppFun = true;\nchar grade = 'A';"
+          }
+        },
+        {
+          "type": "text",
+          "value": {
+            "id": "3-2",
+            "textLabel": "Type casting converts a value from one type to another.\n• Widening/Promotion (automatic)\n• Narrowing (manual, can be unsafe)"
+          }
+        },
+        {
+          "type": "code",
+          "value": {
+            "id": "3-2b",
+            "code": "int num = 10;\ndouble converted = num; // widening\n\ndouble x = 5.7;\nint y = (int)x; // narrowing (C-style cast)"
+          }
+        }
+      ]
+    }
+  },
+  "4": {
+    "Main Line": {
+      "label": "Operator",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "4.1 C++ Operator", "href": "#4-1" },
+        { "text": "4.2 Arithmetic", "href": "#4-2" },
+        { "text": "4.3 Comparison", "href": "#4-3" },
+        { "text": "4.4 Logical", "href": "#4-4" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "C++ Operators",
+      "contentBody": [
+        {
+          "type": "text",
+          "value": {
+            "id": "4-1",
+            "textLabel": "Operators allow you to perform actions on variables. They include arithmetic, logical, comparison, bitwise, and more."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-2",
+            "code": "#include <iostream>\n\nint main() {\n    int a = 10, b = 5;\n    std::cout << (a + b) << std::endl;\n    std::cout << (a - b) << std::endl;\n    std::cout << (a * b) << std::endl;\n    std::cout << (a / b) << std::endl;\n    return 0;\n}",
+            "output": "15\n5\n50\n2"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-3",
+            "code": "#include <iostream>\n#include <iomanip> // For std::boolalpha\n\nint main() {\n    int x = 10, y = 20;\n    std::cout << std::boolalpha << (x > y) << std::endl;\n    std::cout << std::boolalpha << (x == 10) << std::endl;\n    return 0;\n}",
+            "output": "false\ntrue"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "4-4",
+            "code": "#include <iostream>\n#include <iomanip> // For std::boolalpha\n\nint main() {\n    bool a = true;\n    bool b = false;\n    std::cout << std::boolalpha << (a && b) << std::endl;\n    std::cout << std::boolalpha << (a || b) << std::endl;\n    return 0;\n}",
+            "output": "false\ntrue"
+          }
+        }
+      ]
+    }
+  },
+  "5": {
+    "Main Line": {
+      "label": "C++ If - Else",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "5.1 If Statement", "href": "#5-1" },
+        { "text": "5.2 Else Statement", "href": "#5-2" },
+        { "text": "5.3 Else If Statement", "href": "#5-3" },
+        { "text": "5.4 Nested If", "href": "#5-4" }
+      ],
+      "examId" : [2]
+    },
+    "Content": {
+      "contentTitle": "C++ If/Else",
+      "contentBody": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-1",
+            "code": "#include <iostream>\n\nint main() {\n    int age = 18;\n    if (age >= 18) {\n        std::cout << \"You are an adult.\" << std::endl;\n    }\n    return 0;\n}",
+            "output": "You are an adult."
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-2",
+            "code": "#include <iostream>\n\nint main() {\n    int score = 40;\n    if (score >= 50) {\n        std::cout << \"Pass\" << std::endl;\n    } else {\n        std::cout << \"Fail\" << std::endl;\n    }\n    return 0;\n}",
+            "output": "Fail"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-3",
+            "code": "#include <iostream>\n\nint main() {\n    int temp = 30;\n    if (temp > 35) {\n        std::cout << \"Hot\" << std::endl;\n    } else if (temp > 20) {\n        std::cout << \"Warm\" << std::endl;\n    } else {\n        std::cout << \"Cold\" << std::endl;\n    }\n    return 0;\n}",
+            "output": "Warm"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "5-4",
+            "code": "#include <iostream>\n\nint main() {\n    int a = 10, b = 5;\n    if (a > 0) {\n        if (b > 0) {\n            std::cout << \"Both positive\" << std::endl;\n        }\n    }\n    return 0;\n}",
+            "output": "Both positive"
+          }
+        }
+      ]
+    }
+  },
+  "6": {
+    "Main Line": {
+      "label": "Loops",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "6.1 While Loop", "href": "#6-1" },
+        { "text": "6.2 For Loop", "href": "#6-2" },
+        { "text": "6.3 Range-Based For", "href": "#6-3" },
+        { "text": "6.4 Nested Loop", "href": "#6-4" }
+      ],
+      "examId" : [1, 2]
+    },
+    "Content": {
+      "contentTitle": "Loops",
+      "contentBody": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-1",
+            "code": "#include <iostream>\n\nint main() {\n    int i = 1;\n    while (i <= 5) {\n        std::cout << i << std::endl;\n        i++;\n    }\n    return 0;\n}",
+            "output": "1\n2\n3\n4\n5"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-2",
+            "code": "#include <iostream>\n\nint main() {\n    for (int i = 1; i <= 5; i++) {\n        std::cout << i << std::endl;\n    }\n    return 0;\n}",
+            "output": "1\n2\n3\n4\n5"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-3",
+            "code": "#include <iostream>\n\nint main() {\n    int nums[] = {10, 20, 30};\n    for (int n : nums) {\n        std::cout << n << std::endl;\n    }\n    return 0;\n}",
+            "output": "10\n20\n30"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "6-4",
+            "code": "#include <iostream>\n\nint main() {\n    for (int i = 1; i <= 3; i++) {\n        for (int j = 1; j <= 3; j++) {\n            std::cout << i << \" \" << j << std::endl;\n        }\n    }\n    return 0;\n}",
+            "output": "1 1\n1 2\n1 3\n2 1\n2 2\n2 3\n3 1\n3 2\n3 3"
+          }
+        }
+      ]
+    }
+  },
+  "7": {
+    "Main Line": {
+      "label": "C++ Arrays",
+      "color": "#FFFFFF",
+      "links": [
+        { "text": "7.1 Arrays", "href": "#7-1" },
+        { "text": "7.2 Loop Through Array", "href": "#7-2" }
+      ],
+      "examId" : [1, 2]
+    },
+    "Content": {
+      "contentTitle": "C++ Arrays",
+      "contentBody": [
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "7-1",
+            "code": "#include <iostream>\n\nint main() {\n    int numbers[] = {1, 2, 3, 4};\n    std::cout << numbers[0] << std::endl;\n    return 0;\n}",
+            "output": "1"
+          }
+        },
+        {
+          "type": "codeBlock",
+          "value": {
+            "id": "7-2",
+            "code": "#include <iostream>\n\nint main() {\n    int numbers[] = {1, 2, 3, 4};\n    for (int n : numbers) {\n        std::cout << n << std::endl;\n    }\n    return 0;\n}",
+            "output": "1\n2\n3\n4"
+          }
+        }
+      ]
+    }
+  }
+}

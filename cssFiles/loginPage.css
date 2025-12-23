@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    background: #000;
+    color: #0f0;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+body {
+    display: grid;
+    place-items: center;
+}
+
+
+
+/* -----------------------------------------------  Background  ---------------------------------------------- */
+
+pre#background {
+    position: relative;       /* Important: so child divs use this as reference */
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    color: #0f0;
+    font-family: monospace;
+    font-size: 20px;
+}
+
+
+.char div {
+    text-shadow: 0 0 5px #0f0;
+}
+
+
+
+#foreground.active {
+    width: 40%;
+    opacity: 1;
+}
+
+
+
+#foreground {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 30%;
+    height: auto;
+    z-index: 1;
+    color: white;
+    text-align: center;
+    font-size: 2rem;
+    transition: all 0.7s ease;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* -------------------------------------------------  Input Thing  --------------------------------------- */
+
+.rounded-square {
+    width: 100px;
+    height: 100px;
+    background-color: #fff6bc;
+    border: 2px solid #fff6bc;
+    border-radius: 20px;
+}
+
+
+/* -------------------------------------------------  Button  -------------------------------------------- */
+
+button {
+    width: 40%;
+    height: 20%;
+}
+
+.my-button {
+    padding: 20px 40px; 
+    margin: 0 15px;
+    font-size: 20px;
+    background-color: #ffde00;
+    border: 2px solid;
+    border-radius: 20px;
+    transition: transform 0.15s ease, border 0.15s ease;
+}
+
+.my-button:hover {
+    border: 4px solid;
+    transform: scale(1.2); /* zoom in */
+}
+
+.my-form {
+    text-align: center;
+    font-size: 22px;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 100%;
+    margin-bottom: 5%;
+    padding: 1% 0;
+}
+
+.my-text {
+    text-align: left;
+    font-size: 20px;
+}
