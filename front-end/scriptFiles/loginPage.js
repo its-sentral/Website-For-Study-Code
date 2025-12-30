@@ -163,78 +163,75 @@ function loginSystem() {
     const nameObj = document.getElementById("username");
     const passObj = document.getElementById("password");
     const warnObj = document.getElementById("warning");
-    fetch("/data/userData.json")  // replace with your JSON file path or API URL
-    .then(response => response.json())  // parse JSON
-    .then(data => {
-        if (data) {
-            let user = data.find(u => u.username === nameObj.value && u.password === passObj.value);
-            if (nameObj.value == "" || passObj.value == "") {
-                warnObj.textContent = "*Please fill all the forms."
-            }
 
-            else if (user) {
-                window.location.href = "home.html?user=" + encodeURIComponent(nameObj.value);
-            }
-            else {
-                warnObj.textContent = "*Username or Password is incorrect.";
-            }
-        }
+    if (nameObj.value === "" || passObj.value === "") {
+        warnObj.textContent = "*Please fill all the forms.";
+        return;
+    }
 
-        else {
-            warnObj.textContent = "*The system are currently down.";
-        }
+    fetch("http://127.0.0.1:8000/login", {
+        method: "POST",                     //send over username and password for databse to check
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            username: nameObj.value,
+            password: passObj.value
+        })
     })
-    .catch(error => console.error("Error loading JSON:", error));
-    
-
-    
-    
-    
-    
+    .then(response => {
+        if(!response.ok)  //check for response
+        {
+            return response.json().then(error => {throw error;});
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log("Login Sucessful: ", data); //valid
+        window.location.href = "/home.html?user=" + encodeURIComponent(nameObj.value);
+    })
+    .catch(error => {
+        warnObj.textContent = error.detail;
+    })
 }
 
 
-function registerSystem() {
+function registerSystem() 
+{
     const nameObj = document.getElementById("username");
     const passObj = document.getElementById("password");
     const cPassObj = document.getElementById("confirmPassword");
     const warnObj = document.getElementById("warning");
-    fetch("/data/userData.json")  // replace with your JSON file path or API URL
-    .then(response => response.json())  // parse JSON
-    .then(data => {
-        file = data;  // store JSON in variable
-        if (file) {
-            let user = file.find(u => u.username === nameObj.value);
-            if (nameObj.value == "" || passObj.value == "" || cPassObj.value == "") {
-                warnObj.textContent = "*Please fill all the forms."
-            }
-            else if (user) {
-                warnObj.textContent = "*This Username has already been taken.";
-            }
 
-            else if (passObj.value != cPassObj.value)
-                warnObj.textContent = "*Confirm Password doesn't match with Password."
+    if (nameObj.value === "" || passObj.value === "" || cPassObj.value === "") {
+        warnObj.textContent = "*Please fill all the forms.";
+        return;
+    }
+    if (passObj.value !== cPassObj.value) {
+        warnObj.textContent = "*Confirm Password doesn't match with Password.";
+        return;
+    }
 
-            else {
-                // have to do some backend data insertion here
-                
-                // file.push({username: nameObj.value, password: passObj.value});
-
-
-                // Redirect to login page with username in query string
-                window.location.href = "home.html?user=" + encodeURIComponent(nameObj.value);
-            }
-        }
-
-        else {
-            warnObj.textContent = "*The system are currently down";
-        }
+    fetch("http://127.0.0.1:8000/register", {
+        method: "POST",                         
+        headers: { "Content-Type":"application/json"},
+        body:JSON.stringify({              //post over the username and password to the database 
+            username:nameObj.value,
+            password:passObj.value
+        })
     })
-    .catch(error => console.error("Error loading JSON:", error));
-
-
-    
-
+    .then(response => {  //check for response
+        if(!response.ok)
+        {
+            return response.json().then(error => {throw error;});
+        }
+        return response.json
+    })
+    .then(data => { //response valid, send to homepage
+        console.log("User registered:", data);
+        window.location.href = "/home.html?user=" + encodeURIComponent(nameObj.value);
+    })
+    .catch(error => {
+        warnObj.textContent = "Username already exist";
+    })
     
 }
 

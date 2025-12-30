@@ -135,6 +135,58 @@ function renderContentBlock(block, index) {
   }
 }
 
+function QuizButton({ examId, index, username, courseId }) {
+  // State to hold the color logic
+  const [isDone, setIsDone] = React.useState(false);
+  const uniqueQuizId = `${courseId}_${examId}`;
+  // Fetch status when the button loads
+React.useEffect(() => {
+    if (username && uniqueQuizId) {
+      // Updated URL to match new backend
+      fetch(`http://127.0.0.1:8000/check_quiz/${username}/${uniqueQuizId}`)
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.status === true) {
+            setIsDone(true);
+          }
+        })
+        .catch((err) => console.error("Error:", err));
+    }
+  }, [username, uniqueQuizId]);
+
+  const style = {
+    display: "inline-block",
+    width: "65%",
+    margin: "1% 5%",
+    padding: "10px 20px",
+    backgroundColor: isDone ? "#4CAF50" : "#ba2222ff", 
+    color: "white",
+    textDecoration: "none",
+    borderRadius: "5px",
+    fontWeight: "bold",
+    cursor: "pointer",
+    textAlign: "center" 
+  };
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    // Redirect to the exam page
+    window.location.href =
+      "exam.html?user=" +
+      encodeURIComponent(username) +
+      "&languageId=" +
+      encodeURIComponent(courseId) +
+      "&id=" +
+      encodeURIComponent(examId);
+  };
+
+  return (
+    <a style={style} onClick={handleClick}>
+      {/* Change text if done, or keep it as Quiz-Number */}
+      {isDone ? "Quiz Completed" : `Quiz-${index + 1}`}
+    </a>
+  );
+}
 
 
 
@@ -280,18 +332,18 @@ function SplitScreen() {
   };
 
 
-  const buttonLinkQuiz = {
-    display: "inline-block",
-    width: "65%",
-    margin: "1% 5%",
-    padding: "10px 20px",
-    backgroundColor: "#ba2222ff",
-    color: "white",
-    textDecoration: "none",
-    borderRadius: "5px",
-    fontWeight: "bold",
-    cursor: "pointer",
-  };
+  // const buttonLinkQuiz = {
+  //   display: "inline-block",
+  //   width: "65%",
+  //   margin: "1% 5%",
+  //   padding: "10px 20px",
+  //   backgroundColor: "#ba2222ff",
+  //   color: "white",
+  //   textDecoration: "none",
+  //   borderRadius: "5px",
+  //   fontWeight: "bold",
+  //   cursor: "pointer",
+  // };
 
   return (
     <>
@@ -350,16 +402,13 @@ function SplitScreen() {
                   ))}
 
                   {main.examId?.map((examId, i) => (
-                    <a
-                      key={i}
-                      style={buttonLinkQuiz}
-                      onClick={(e) => {
-                        e.preventDefault();
-                        window.location.href = "exam.html?user=" + encodeURIComponent(accountUsername) + "&languageId=" + encodeURIComponent(courseId) + "&id=" + encodeURIComponent(examId);
-                      }}
-                    >
-                      Quiz-{i + 1}
-                    </a>
+                    <QuizButton
+                        key={i}
+                        examId={examId}
+                        index={i}
+                        username={accountUsername}
+                        courseId={courseId}
+                      />
                   ))}
                 </DropDownNavigation>
               );
@@ -369,7 +418,7 @@ function SplitScreen() {
 
 
             <button style={homeButtonStyle} onClick={() => {
-              window.location.href = "home.html?user=" + encodeURIComponent(accountUsername);
+              window.location.href = "/home.html?user=" + encodeURIComponent(accountUsername);
             }}>
               Home
             </button>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Home</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="static/cssFiles/home.css">
+    </head>
+
+
+    
+    <body>
+
+
+        <!-- navigation bar -->
+        <div class="navigation-bar">
+            <!-- logo -->
+            <div style="width: 15%">
+                <div class="logo-back"></div>
+                <div class="logo-front"></div>
+            </div>
+
+            <!-- buttons -->
+            <button class="navi-container" onclick="document.getElementById('home').scrollIntoView({ behavior: 'smooth' })">Home</button>
+            <button class="navi-container" onclick="document.getElementById('course').scrollIntoView({ behavior: 'smooth' })">Course</button>
+            <button class="navi-container" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' })">Contact</button>
+            <button class="navi-container" onclick="location.href='/static/pages/loginPage.html'">Logout</button>
+
+            <!-- Username Part -->
+            <div style="width: 25%; text-align: right; vertical-align: middle; margin: auto auto;">
+                <h1 style="margin: auto auto; text-align: center;" id="username">"placeholder for name"</h1>
+            </div>
+        </div>
+        
+        
+        
+
+        <!-- slider  -->
+        <label id="home" style="top: 0%"></label>
+        <br><br><br><br><br><br><br><br>
+        <div id="detailBox" class="banner-block">
+            <div id="slider" class="slider" style="--quantity: 5;">
+                <div class="detail-box" style="--position: 1">
+                    <div style="background-color: rgb(249, 114, 137); text-align: left; padding: 0 5%; color: white;">
+                        <h1>Website Propose</h1>
+                        <label>Welcome to CodeForge, the digital workshop for aspiring developers. Our purpose is to provide the tools, guidance, and community you need to craft a solid foundation in programming. We focus on teaching the fundemental of each language and let you explore the power of that lanaguge through our PlayGround</i></label>
+                    </div>
+                </div>
+                
+
+                <div class="detail-box" style="--position: 2">
+                    <div style="background-color: rgb(60, 220, 124); text-align: left; padding: 0 5%; color: white;">
+                        <h1>Features</h1>
+                        <ul>
+                            <li>Study Course</li>
+                            <li>Coding Area</li>
+                            <li> Guided Learning Paths </li>
+                            <li> Community-Driven Support </li>
+                            <li> Beginner-Friendly</li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="detail-box" style="--position: 3">
+                    <div style="background-color: rgb(78, 175, 235); text-align: left; padding: 0 5%; color: white;">
+                        <h1>Course list</h1>
+                        <ul>
+                            <li>Python</li>
+                            <li>Rust</li>
+                            <li>C++</li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="detail-box" style="--position: 4">
+                    <div style="background-color: blue; text-align: left; padding: 0 5%; color: white;">
+                        <h1>Made By</h1>
+                        <ul>
+                            <li><label>67011353 Theepapon Khwanna (API)</label></li>
+                            <li><label>67011638 Pasu Leelahajiva (Back End)</label></li>
+                            <li><label>67011093 Chavit Saritdeechaikul (Front End)</label></li>
+                        </ul>
+                    </div>
+                </div>
+                
+
+                <div class="detail-box" style="--position: 5">
+                    <div style="background-color: blueviolet; text-align: left; padding: 0 5%; color: white;">
+                        <h1>Comming soon</h1>
+                        <label>More content might be added soon</label>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+        <div id="course" style="width: 100%;">
+            <table style="margin: 0 auto; width: 100%; height: auto;">
+                <tr>
+                    <td style="width:20%;">
+                        <div class="wheel-container">
+                            <div class="wheel" id="wheel">
+                                <img src="https://tse4.mm.bing.net/th/id/OIP.HrBOk_qD-pQSmgSI3XzRJAHaHw?rs=1&pid=ImgDetMain&o=7&rm=3" class="img" alt="">
+                                <img src="" class="img" alt="">
+                                <img src="" class="img" alt="">
+                            </div>
+                        </div>
+                    </td>
+
+
+                    <td style="width:80%;">
+                        <div id="courseBox" class="course-block">
+                            <h1 id="courseName" style="padding: 5% auto; font-size: 50px;"></h1>
+                            <label id="courseDescription" class="my-text"></label>
+                            <div style="width: 100%; text-align: right;">
+                                <button style="text-align: center;" class="my-button" onclick="beginCourse()">Begin Course</button>
+                            </div>
+                            
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            
+
+            
+        </div>
+
+
+        <div id="contact" style="height: 20vh;"></div>
+        <div>
+            <div class="contact-block left" style="width: 40%; margin-left: 13%; background-color: rgb(249, 114, 137);">
+                <h1 style="margin-top: 0;">Contact US </h1>
+                <div style="padding-left: 5%;">
+                    <div class="imgText-line">
+                        <img width="40px" src="https://th.bing.com/th/id/R.3ea5d09ed6d30dbf6f1f4871e5e4c788?rik=0iGQR9DRLKii1w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2femail-icon-png-email-icon-2048.png&ehk=ahnNwHNab9Dq7qF3w%2fPChLDTTN3R5mvMWkD739gMXIg%3d&risl=&pid=ImgRaw&r=0"/>
+                        <label class="my-text">contact@codeForge.com </label>
+                    </div>
+                    <div class="imgText-line">
+                        <img width="40" src="https://th.bing.com/th/id/R.3ea5d09ed6d30dbf6f1f4871e5e4c788?rik=0iGQR9DRLKii1w&riu=http%3a%2f%2fpluspng.com%2fimg-png%2femail-icon-png-email-icon-2048.png&ehk=ahnNwHNab9Dq7qF3w%2fPChLDTTN3R5mvMWkD739gMXIg%3d&risl=&pid=ImgRaw&r=0"/>
+                        <label class="my-text">SoftwareEngineering@kmitl.ac.th</label>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-block right" style="width: 40%; margin-left: 37%; background-color: rgb(60, 220, 124);">
+                <h1 style="margin-top: 0;">JOIN THE COMMUNITY!</h1>
+                <div style="padding-left: 5%;">
+                    <div class="imgText-line">
+                        <img width="40px" src="https://img.icons8.com/?size=100&id=phOKFKYpe00C&format=png&color=000000"/>
+                        <label class="my-text">twitter.com/CodeForgeHQ </label>
+                    </div>
+                    <div class="imgText-line">
+                        <img width="40px" style="border-radius: 50%;" src="https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png"/>
+                        <label class="my-text">github.com/codeforge-official</label>
+                    </div>
+                    <div class="imgText-line">
+                        <img width="40px" src="https://img.icons8.com/?size=100&id=30888&format=png&color=000000"/>
+                        <label class="my-text">discord.gg/codeforge</label>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="contact-block left" style="width: 40%; margin-left: 13%; background-color: blueviolet; text-align: left;">
+                <h1 style="margin-top: 0;">WORK WITH US</h1>
+                <div style="padding-left: 5%;">
+                    <div class="imgText-line">
+                        <img width="40px" src="https://cdn3.iconfinder.com/data/icons/social-media-chamfered-corner/154/line-256.png"/>
+                        <label class="my-text">linkdIn.com/company/codeforge</label>
+                    </div><br>
+                    <div class="imgText-line">
+                        <img width="40px" style="border-radius: 50%;" src="https://tse3.mm.bing.net/th/id/OIP.7RVnL71ur5xMgC3Xzv1rwAHaHa?cb=ucfimg2ucfimg=1&rs=1&pid=ImgDetMain&o=7&rm=3"/>
+                        <label class="my-text">https://line.me/@codeforge</label>
+                    </div>
+                </div>
+            </div>
+            <div class="contact-block right" style="width: 40%; margin-left: 37%; background-color: rgb(78, 175, 235);">
+                <h1 style="margin-top: 0;">OUR OFFICE</h1>
+                <div style="padding-left: 5%;">
+                    <div class="imgText-line">
+                        <img style="border-radius: 50%;" width="120px" src="https://www.hr.kmitl.ac.th/wp-content/uploads/2020/08/cropped-kmitl-logoThai.png">
+                        <div>
+                            <label class="my-text">Faculty of Software Engineering</label><br>
+                            <label class="my-text">KMITL, 1 Chalong Krung 1</label><br>
+                            <label class="my-text">Bangkok 10520, Thailand</label><br>
+                            <label class="my-text">(+66) 2-222-2222 (PHONE ICON)</label><br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="height: 10vh;"></div>
+        
+        
+
+
+
+        <script src="static/scriptFiles/home.js" defer></script>
+    </body>
+</html>

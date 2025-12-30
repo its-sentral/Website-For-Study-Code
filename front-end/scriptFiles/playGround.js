@@ -5,12 +5,17 @@ let courseId = params.get("languageId");
 
 const navBar = document.getElementById("navBar");
 const mainArea = document.getElementById("mainArea");
+const result = document.getElementById("result");
 const navBtn = document.getElementById("navToggleButton");
 const courseLinks = document.getElementById("courseLink");
 const langSelector = document.getElementById("langId");
 
 
-
+let langID = {
+    "Rust":108,
+    "Python":109,
+    "C++":105
+}
 
 
 
@@ -40,21 +45,6 @@ var editor = CodeMirror.fromTextArea(myTextarea, {
     lineWrapping: true,
     indentUnit: 4,
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 let courses;
@@ -101,7 +91,7 @@ function loadCoursesData() {
         btn.textContent = courses[i].CourseName;
 
         btn.addEventListener("click", () => {
-            location.href = "/pages/courses.html?user="
+            location.href = "/static/pages/courses.html?user="
                 + encodeURIComponent(accountUsername)
                 + "&courseName=" + encodeURIComponent(courses[i].CourseName)
                 + "&courseId=" + encodeURIComponent(courses[i].CourseId);
@@ -121,12 +111,48 @@ function loadCoursesData() {
 
 
 function goHome() {
-    window.location.href = "home.html?user=" + encodeURIComponent(accountUsername);
+    window.location.href = "/home.html?user=" + encodeURIComponent(accountUsername);
 }
 
 
-function run() {
-    
+async function run() {
+    let btn = document.getElementsByClassName("runBtn");
+    btn.disabled = true;
+    const code = editor.getValue();
+    console.log(code);
+    console.log(langID[langSelector.options[langSelector.selectedIndex].text]);
+    try {
+        const response = await fetch('/api/compile', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',}
+        ,body: JSON.stringify({
+                langID: langID[langSelector.options[langSelector.selectedIndex].text],
+                srcCode: code
+            })
+        });
+
+        if (!response.ok) {
+            result.textContent = 'HTTP error! status: ' + response.status;
+            btn.disabled = false;
+            throw new Error('HTTP error! status: ' + response.status);
+        }
+
+        const data = await response.json();
+        
+        if (data['id'] == 0){
+            result.textContent = 'Compile error! \nError Discription: ' + data['error'];
+            btn.disabled = false;
+        }
+        else{
+            result.textContent = data['output'];
+            btn.disabled = false;
+        }
+        console.log(data);
+        btn.disabled = false;
+
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
 }
 
 

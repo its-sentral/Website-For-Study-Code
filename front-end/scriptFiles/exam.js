@@ -6,16 +6,20 @@ let questionId = params.get("id");
 
 const navBar = document.getElementById("navBar");
 const mainArea = document.getElementById("mainArea");
+const result = document.getElementById("result");
 const navBtn = document.getElementById("navToggleButton");
 const courseLinks = document.getElementById("courseLink");
 const langSelector = document.getElementById("langId");
 const probTitle = document.getElementById("problemTitle");
 const probDetail = document.getElementById("problemDetail");
 const resultLabel = document.getElementById("resultLabel");
-const result = document.getElementById("result");
 const resultDiv = document.getElementById("resultDiv");
 
-
+let langID = {
+    "Rust":108,
+    "Python":109,
+    "C++":105
+}
 
 // --------------------- Code Mirror ----------------------
 let modeTxt = {
@@ -69,6 +73,7 @@ function fetchQuiz() {
         .then(data => {
             if (data) {
                 problem = data[questionId];
+                
                 getQuizData()
             }
 
@@ -132,33 +137,85 @@ function goLink(type) {
     if (type == 'back')
         window.location.href = "courses.html?user=" + encodeURIComponent(accountUsername) + "&courseName=" + encodeURIComponent(courseName) + "&courseId=" + encodeURIComponent(courseId);
     else if (type == 'home')
-        window.location.href = "home.html?user=" + encodeURIComponent(accountUsername);
+        window.location.href = "/home.html?user=" + encodeURIComponent(accountUsername);
     else if (type == 'playground')
         window.location.href = "playGround.html?user=" + encodeURIComponent(accountUsername) + "&languageId=" + encodeURIComponent(courseId);
     
 }
 
 
-function run() {
-    
+async function run() {
+    let btn = document.getElementsByClassName("runBtn");
+    btn.disabled = true;
+    const code = editor.getValue();
+    console.log(code);
+    console.log(langID[langSelector.options[langSelector.selectedIndex].text]);
+    try {
+        const response = await fetch('/api/compile', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json',}
+        ,body: JSON.stringify({
+                langID: langID[langSelector.options[langSelector.selectedIndex].text],
+                srcCode: code
+            })
+        });
+
+        if (!response.ok) {
+            result.textContent = 'HTTP error! status: ' + response.status;
+            btn.disabled = false;
+            throw new Error('HTTP error! status: ' + response.status);
+        }
+
+        const data = await response.json();
+        
+        if (data['id'] == 0){
+            result.textContent = 'Compile error! \nError Discription: ' + data['error'];
+            btn.disabled = false;
+        }
+        else{
+            result.textContent = data['output'];
+            btn.disabled = false;
+        }
+        checkAnswer(data['output']);
+        console.log(data);
+        btn.disabled = false;
+
+    } catch (error) {
+        console.error('Fetch error:', error);
+    }
 }
 
 
-function checkAnswer() {
+function checkAnswer(res) {
     let flagCorrect = false;
-    if (problem.Result == result.value)
+    if (problem.Result == res.slice(0, -1))
         flagCorrect = true
     
     if (flagCorrect) {
-        resultDiv.style.backgroundColor = "rgb(48, 213, 50)";
-        resultLabel.textContent = "Result Correct!!";
-        
-    }
-    else {
-        resultDiv.style.backgroundColor = "#ba2222ff";
-        resultLabel.textContent = "Result Incorrect...";
-    }
-    resultLabel.style.color = "white";
+            resultDiv.style.backgroundColor = "rgb(48, 213, 50)";
+            resultLabel.textContent = "Result Correct!!";
+
+            
+            //Get params from current URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const user = urlParams.get('user');
+            const courseId = urlParams.get('languageId'); 
+            const examId = urlParams.get('id');
+
+            const uniqueQuizId = `${courseId}_${examId}`;
+
+            if (user && courseId && examId) {
+                fetch(`http://127.0.0.1:8000/mark_quiz_done/${user}/${uniqueQuizId}`, {
+                    method: "POST"
+                })
+                .then(res => console.log("Progress saved!"))
+                .catch(err => console.error("Save failed", err));
+            }
+        } else {
+            resultDiv.style.backgroundColor = "#ba2222ff";
+            resultLabel.textContent = "Result Incorrect...";
+        }
+        resultLabel.style.color = "white";
 }
 
 

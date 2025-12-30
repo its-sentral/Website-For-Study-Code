@@ -69,7 +69,7 @@
         { "text": "2.1 Python Syntax", "href": "#2-1" },
         { "text": "2.2 Python I/O", "href": "#2-2" }
       ],
-      "examId" : [1]
+      "examId" : ["1.1"]
     },
     "Content": {
       "contentTitle": "Python Syntax Overview",
@@ -129,7 +129,7 @@
         { "text": "3.1 Python Data Types", "href": "#3-1" },
         { "text": "3.2 Python Type Casting", "href": "#3-2" }
       ],
-      "examId" : [2]
+      "examId" : ["2.1"]
     },
     "Content": {
       "contentTitle": "Python Data Types",
@@ -183,7 +183,7 @@
         { "text": "4.3 Comparison", "href": "#4-3" },
         { "text": "4.4 Logical", "href": "#4-4" }
       ],
-      "examId" : [1, 2]
+      "examId" : ["3.1", "3.2"]
     },
     "Content": {
       "contentTitle": "Python Operators",
@@ -253,7 +253,7 @@
         { "text": "5.3 Elif Statement", "href": "#5-3" },
         { "text": "5.4 Nested If", "href": "#5-4" }
       ],
-      "examId" : [2]
+      "examId" : ["4.1"]
     },
     "Content": {
       "contentTitle": "Python If/Else",
@@ -331,7 +331,7 @@
         { "text": "6.3 For Each Loop", "href": "#6-3" },
         { "text": "6.4 Nested Loop", "href": "#6-4" }
       ],
-      "examId" : [2]
+      "examId" : ["5.1"]
     },
     "Content": {
       "contentTitle": "Loops",
@@ -407,7 +407,7 @@
         { "text": "7.1 Lists", "href": "#7-1" },
         { "text": "7.2 Loop Through List", "href": "#7-2" }
       ],
-      "examId" : [2]
+      "examId" : ["6.1"]
     },
     "Content": {
       "contentTitle": "Python Lists",
@@ -454,7 +454,7 @@
         { "text": "8.2 Accessing Items", "href": "#8-2" },
         { "text": "8.3 Loop Dictionaries", "href": "#8-3" }
       ],
-      "examId" : [2]
+      "examId" : ["7.1"]
     },
     "Content": {
       "contentTitle": "Python Dictionaries",
@@ -516,7 +516,7 @@
         { "text": "9.2 Parameters", "href": "#9-2" },
         { "text": "9.3 Return Values", "href": "#9-3" }
       ],
-      "examId" : [2]
+      "examId" : ["8.1"]
     },
     "Content": {
       "contentTitle": "Python Functions",
@@ -577,7 +577,7 @@
         { "text": "10.1 Tuples", "href": "#10-1" },
         { "text": "10.2 Sets", "href": "#10-2" }
       ],
-      "examId" : [1, 2]
+      "examId" : ["9.1", "9.2"]
     },
     "Content": {
       "contentTitle": "Tuples & Sets",

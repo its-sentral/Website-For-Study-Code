@@ -163,7 +163,7 @@ function updateCourseBox(courseIdx) {
 
 function beginCourse() {
     let courseIdx = ((idx % courses.length) + courses.length) % courses.length;
-    window.location.href = "courses.html?user=" + encodeURIComponent(accountUsername) + "&courseName=" + encodeURIComponent(courses[courseIdx].CourseName) + "&courseId=" + encodeURIComponent(courses[courseIdx].CourseId);
+    window.location.href = "static/pages/courses.html?user=" + encodeURIComponent(accountUsername) + "&courseName=" + encodeURIComponent(courses[courseIdx].CourseName) + "&courseId=" + encodeURIComponent(courses[courseIdx].CourseId);
 }
 
 

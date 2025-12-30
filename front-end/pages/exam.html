@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Quiz</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="/static/cssFiles/exam.css">
+    </head>
+
+    
+
+
+    <body>
+        
+        <button id="navToggleButton" class="buttonStyle" onclick="navEnable()"> > </button>
+        <div class="containerStyle textContainerStyle">
+            <div id ="navBar" class="leftStyle">
+                <h1 id="problemTitle" style="font-size: 36px;"></h1>
+                <pre id="problemDetail" style="font-size: 20px; white-space: pre-wrap; word-wrap: break-word;"></pre>
+                
+                <button class="linkButtonStyle" style="top: 92%;" onclick="goLink('back')">Back</button>
+                <button class="linkButtonStyle" style="top: 92%; margin-left: 15%;" onclick="goLink('home')">Home</button>
+                <button class="linkButtonStyle" style="top: 92%; margin-left: 30%;" onclick="goLink('playground')">Play Ground</button>
+
+
+                <div style="height: 150px"></div>
+                <div id="courseLink" style="text-align: center;"></div>
+            </div>
+
+
+            <div id="mainArea" class="rightStyle">
+                <div class="stacking">
+                    <div class="myUniqueDiv" style="margin-bottom: 0%; height: 70%;">
+                        <div style="display: flex; align-items: center; gap: 1rem;">
+                            <h3 style="font-weight: 900;">Code</h3>
+                            <select class="langSelector" id="langId" disabled></select>
+                        </div>
+                        
+                        <textarea id="codeArea"></textarea>
+                        <br>
+                        <button onclick="run()" class="runBtn">&#9654; Run</button>
+                    </div>
+                    
+                    <div id="resultDiv" class="myUniqueDiv" style=" height: 30%;">
+                        <h3 id="resultLabel" style="font-weight: 900;">Result</h3>
+                        <textarea id="result" disabled></textarea>
+                        <br>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        
+        <link rel=stylesheet href="/root/lib/codemirror-5.65.20/doc/docs.css">
+        <link rel="stylesheet" href="/root/lib/codemirror-5.65.20/lib/codemirror.css">
+        <script src="/root/lib/codemirror-5.65.20/lib/codemirror.js"></script>
+        <script src="/root/lib/codemirror-5.65.20/addon/mode/simple.js"></script>
+
+        <script src="/root/lib/codemirror-5.65.20/mode/clike/clike.js"></script>
+        <script src="/root/lib/codemirror-5.65.20/mode/python/python.js"></script>
+        <script src="/root/lib/codemirror-5.65.20/mode/rust/rust.js"></script>
+        
+
+
+        <link rel="stylesheet" href="/root/lib/codemirror-5.65.20/theme/dracula.css">
+        <script src="/root/lib/codemirror-5.65.20/addon/edit/closebrackets.js"></script>
+        <script src="/root/lib/codemirror-5.65.20/addon/hint/show-hint.js"></script>
+        <link rel="stylesheet" href="/root/lib/codemirror-5.65.20/addon/hint/show-hint.css">
+        <script src="/root/lib/codemirror-5.65.20/addon/hint/anyword-hint.js"></script>
+
+        <script src="/static/scriptFiles/exam.js"></script>
+    </body>
+</html> 
